@@ -13,6 +13,12 @@ int match(const char *string, const char *pattern)
     if (status != 0) return 0;
     return 1;
 }
+
+struct Keyword
+{
+    int keyword;
+    char *c;
+};
 // Queue implementation taken from https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/
 // Not written by Me
 struct Queue 
@@ -22,11 +28,6 @@ struct Queue
     int* array; 
 };
 
-struct Keyword
-{
-    int keyword;
-    char *c;
-};
 
 struct Queue* createQueue(unsigned capacity) 
 { 
@@ -86,10 +87,11 @@ int rear(struct Queue* queue)
 } 
 
 int isSpace(char *c) {
-    if(*c == ' ') {
-        return 1;
-    }
-    return 0;
+    return *c == ' ' ? 1 : 0;
+}
+
+int isDeclaration(char *line) {
+    return match(line, "[a-z]{2}") ? 1 : 0;
 }
 
 int isAssing(char *line) {
@@ -99,9 +101,14 @@ int isAssing(char *line) {
 struct Keyword* isKeyword(char *c) {
     struct Keyword* character = (struct Keyword*) malloc(sizeof(struct Keyword)); 
     if(*c == 'i' || *c == 'f' || *c == 'p') {
-        character->c = c;
         character->keyword = 1;
-
+        if(*c == 'i'){
+            character->c = "intdcl";
+        } else if(*c == 'f') {
+            character->c = "floatdcl";
+        } else {
+            character->c = "print";
+        }
         return character;
     }
     character->c = c;
@@ -160,7 +167,7 @@ int main(int arg, char *arv[]) {
             if(isAssing(line)) {
                 printf("is an assignment %s\n", line);
             }
-            memset(line, 0, 100 * sizeof(line[0]));
+            memset(line, 0, count * sizeof(line[0]));
             count = 0;
         }
     }
