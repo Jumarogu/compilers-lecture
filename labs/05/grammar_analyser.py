@@ -8,12 +8,14 @@ def main():
         line = cleanLine(line)
         dict[line[0]] = {
             'productions': cleanProduction(line[1]),
+            'production': line[1],
             'reached': False,
             'isTerminal': False
         }
     cfg_file.close()
     dict = processProductions(dict)
     dict['S']['reached'] = True
+    dict['S']['isTerminal'] = True
     writeFile(dict)
 
 def processProductions(dict):
@@ -35,9 +37,10 @@ def processProductions(dict):
     return dict
 
 def writeFile(dict):
+    f = open("cfg_clean.txt", "w")
     for x, y in dict.items():
-        if y['reached'] && y['isTerminal']:
-            if y[]
+        if y['reached'] and y['isTerminal']:
+            f.write('' + x + ' - ' + y['production'] + '\n')
 def isTerminalSymbol(prod):
     if(len(prod) < 2):
         return prod.islower()
