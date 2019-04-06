@@ -26,11 +26,33 @@ Agenda:
   * Evolution of Compilers
   * Architecture specific optimizations
   * Programming Language Basics
-* [Syntax directed Translation](https://docs.google.com/presentation/d/1KE89YKtU4IDtK5locxnlciRHkWltg9VG_C42ORVR7WI/edit?usp=sharing)
+* [Simple Syntax directed Translation](https://docs.google.com/presentation/d/1KE89YKtU4IDtK5locxnlciRHkWltg9VG_C42ORVR7WI/edit?usp=sharing)
   * Syntax definition
   * Definition of gramars
   * Parse Trees
   * Ambiguity
+* [Lexical Analyser and Regex](https://docs.google.com/presentation/d/1kpLPDliaGBJbckxPY2lRWv38FHG55jfVX6OWH-FSPeM/edit?usp=sharing)
+  * Regex
+  * DFA
+  * LEX
+  * YACC
+* [Grammars and Parsing](https://drive.google.com/open?id=1pUU1y9kDVrs9kkP_Zh1oC59G94Hi3FzSqehC9nmve0g)
+  * Grammars in our lifes
+  * Parse trees
+  * Properties of CFGs
+  * Reduced Gramars
+  * Backus-Naur Form (BNF) notation
+  * Parsers and Recognizers
+* [Top-Down Parsing](https://docs.google.com/presentation/d/1b9ecDphpIwD-gSvFawZQzXSg1U_HAel7CmucwWCAtI4/edit?usp=sharing)
+  * LL(k)
+  * Recursive-descent parsers
+  * Eliminating Ambiguity
+  * Elimination of left recursion
+* [Bottom-Up Parsing](https://drive.google.com/open?id=1WCBfCFD-7AuhNQYGEi1ZxJKsevSjsKCmL6kM0Uss5Mw)
+  * LR(k)
+  * Shift-reduce
+  * Simple LR Parser algorithm
+
 
 Extra topic Trainings ( in case you need them )
   * Git training
