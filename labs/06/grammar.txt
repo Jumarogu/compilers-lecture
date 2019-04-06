@@ -1,5 +1,0 @@
-S - D | A |
-A - id assign V O
-D - print id | int id | float id
-O - minus V O| plus V O | multiplication V O | division V O | @
-V - id | inum | fnum
