@@ -371,7 +371,7 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[23] =
     {   0,
-        0,    0,   14,   13,    9,    8,   11,   10,    4,    7,
+        0,    0,   14,   13,    9,    7,    8,   10,    4,   11,
         6,    2,    3,    1,    0,    0,    4,    6,    0,   12,
         5,    0
     } ;
@@ -416,9 +416,9 @@ static yyconst flex_int32_t yy_meta[14] =
 
 static yyconst flex_int16_t yy_base[24] =
     {   0,
-        0,    0,   23,   24,   24,   24,   24,   15,    8,   24,
-       11,   24,   24,   24,   18,   11,    0,    8,   15,   24,
-       24,   24,   14
+        0,    0,   24,   25,   25,   25,   25,   16,    8,   25,
+       12,   25,   25,   25,   19,   12,    0,    9,   16,   25,
+        9,   25,   14
     } ;
 
 static yyconst flex_int16_t yy_def[24] =
@@ -428,20 +428,20 @@ static yyconst flex_int16_t yy_def[24] =
        22,    0,   22
     } ;
 
-static yyconst flex_int16_t yy_nxt[38] =
+static yyconst flex_int16_t yy_nxt[39] =
     {   0,
         4,    4,    5,    6,    7,    4,    8,    9,   10,   11,
-       12,   13,   14,   16,   19,   17,   20,   18,   21,   20,
-       18,   15,   22,    3,   22,   22,   22,   22,   22,   22,
-       22,   22,   22,   22,   22,   22,   22
+       12,   13,   14,   16,   19,   17,   21,   20,   18,   21,
+       20,   18,   15,   22,    3,   22,   22,   22,   22,   22,
+       22,   22,   22,   22,   22,   22,   22,   22
     } ;
 
-static yyconst flex_int16_t yy_chk[38] =
+static yyconst flex_int16_t yy_chk[39] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    9,   23,    9,   19,   18,   16,   15,
-       11,    8,    3,   22,   22,   22,   22,   22,   22,   22,
-       22,   22,   22,   22,   22,   22,   22
+        1,    1,    1,    9,   23,    9,   21,   19,   18,   16,
+       15,   11,    8,    3,   22,   22,   22,   22,   22,   22,
+       22,   22,   22,   22,   22,   22,   22,   22
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -704,7 +704,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 24 );
+		while ( yy_base[yy_current_state] != 25 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -731,57 +731,57 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 6 "compiler.l"
-printf("print");
+printf("print ");
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 7 "compiler.l"
-printf("floatDcl");
+printf("floatdcl ");
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 8 "compiler.l"
-printf("intDcl");
+printf("intdcl ");
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 9 "compiler.l"
-printf("inum");
+printf("inum ");
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 10 "compiler.l"
-printf("fnum");
+printf("fnum ");
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 11 "compiler.l"
-printf("id");
+printf("id ");
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 12 "compiler.l"
-printf("assign");
+printf("addition ");
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 13 "compiler.l"
-printf("sum");
+printf("minus ");
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 14 "compiler.l"
-printf("multiplication");
+printf("multiplication ");
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 15 "compiler.l"
-printf("division");
+printf("division ");
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 16 "compiler.l"
-printf("minus");
+printf("assign ");
 	YY_BREAK
 case 12:
 /* rule 12 can match eol */
@@ -1802,7 +1802,7 @@ int main(int argc, char **argv) {
         if (!(fd = fopen(argv[1], "r")))
         {
             perror("Error: ");
-            return (-1);
+            return -1;
         }
         yyset_in(fd);
         yylex();
@@ -1810,5 +1810,5 @@ int main(int argc, char **argv) {
     }
     else
         printf("Usage: a.out filename\n");
-    return (0);
+    return 0;
 }
